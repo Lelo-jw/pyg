@@ -21,10 +21,12 @@
     </header>
     <!-- 分类页内容块 -->
     <div class="pyg-main">
-       <div class="left-nav">
-           
-       </div>
-       <div class="right-list"></div>
+        <div class="left-nav">
+
+        </div>
+        <div class="right-list">
+            
+        </div>
     </div>
     <!-- 公共模板：底部导航 -->
     <footer class="pyg-footer">
@@ -47,18 +49,35 @@
     </footer>
 </body>
 <!-- 商品分类列表左侧导航模板 -->
-<script type="text/template" id="categoryTemp">
+<script type="text/template" id="leftTemp">
     <ul>
         {{each data value index}}
         {{if(index === 0)}}
-            <li class="active">{{value.cat_name}}</li>
+            <li class="active" leftid={{index}}>{{value.cat_name}}</li>
         {{else}}
-            <li>{{value.cat_name}}</li>
+            <li leftid={{index}}>{{value.cat_name}}</li>
         {{/if}}
         {{/each}}
     </ul>
 </script>
 <!-- 商品分类列表右侧导航模板 -->
+<script type="text/template" id="rightTemp">
+    {{each data value index}}
+    <div class="goodstitle">{{value.cat_name}}</div>
+            <div class="goodslist">
+                <ul>
+                    {{each value.children value2 index2}}
+                    <li>
+                        <a href="javascript:;">
+                            <img src="http://api.pyg.ak48.xyz/{{value2.cat_icon}}" alt="">
+                            <div>{{value2.cat_name}}</div>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+    {{/each}}
+</script>
 <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"></script>
 <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
 <script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll.min.js"></script>

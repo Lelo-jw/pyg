@@ -1,9 +1,14 @@
  // 分类页内容块
  .pyg-main{
+     padding-left: 10rem;
      width: 100%;
      background-color: #fff;
+     position: relative;
      display: flex;
      .left-nav{
+         position: absolute;
+         top: 0;
+         left: 0;
          width: 10rem;
          height: 100%;
          overflow: scroll;
@@ -20,6 +25,35 @@
          }
      }
      .right-list{
-         flex: 1;
+         height: 100%;
+         overflow: scroll;
+
+         .goodstitle{
+             line-height: 4rem;
+             color: #0094ff;
+             font-size: 1.4rem;
+             padding-left: 1rem;
+         }
+         .goodslist{
+             >ul{
+                 display: flex;
+                 flex-wrap: wrap;
+                 >li{
+                     width: 33.33%;
+                     >a{
+                         >img{
+                             display: block;
+                             width: 80%;
+                             margin: 0 auto;
+                         }
+                         >div{
+                             text-align: center;
+                             color: #333;
+                             font-size: 1.5rem;
+                         }
+                     }
+                 }
+             }
+         }
      }
  }
