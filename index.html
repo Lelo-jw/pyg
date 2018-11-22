@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="/css/index.css">
     <title>品优购首页</title>
 </head>
+
 <body>
     <!-- 公共模板：顶部搜索 -->
     <header class="pyg-header">
@@ -17,7 +19,61 @@
             <input type="search" class="mui-input-clear" placeholder="">
         </div>
     </header>
-    <div class="pyg-main"></div>
+    <!-- 首页内容块 -->
+    <div class="pyg-main">
+        <!-- 轮播图 -->
+        <div class="img-loop">
+
+        </div>
+        <!-- 分类导航 -->
+        <div class="pyg-cates">
+        </div>
+        <!-- 首页商品列表 -->
+        <div class="pro-list">
+            <!-- <div class="pyg-goodslist">
+                <div class="goodsTitle"><img src="http://image4.suning.cn/uimg/cms/img/149559219946350066.png" alt=""></div>
+                <ul>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="http://image2.suning.cn/uimg/b2c/newcatentries/0000000000-000000000854714273_1_400x400.jpg"
+                                alt="">
+                            <div class="goodsName">利仁（Liven）DHG-Z390电火锅 3.9L容量 3档火力可调 多功能不粘锅 电煮锅 电炖锅</div>
+                            <div class="goodsPrice">￥169</div>
+                        </a>
+                        <a href="javascript:;"><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">找相似</button></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="http://image2.suning.cn/uimg/b2c/newcatentries/0000000000-000000000854714273_1_400x400.jpg"
+                                alt="">
+                            <div class="goodsName">利仁（Liven）DHG-Z390电火锅 3.9L容量 3档火力可调 多功能不粘锅 电煮锅 电炖锅</div>
+                            <div class="goodsPrice">￥169</div>
+                        </a>
+                        <a href="javascript:;"><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">找相似</button></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="http://image2.suning.cn/uimg/b2c/newcatentries/0000000000-000000000854714273_1_400x400.jpg"
+                                alt="">
+                            <div class="goodsName">利仁（Liven）DHG-Z390电火锅 3.9L容量 3档火力可调 多功能不粘锅 电煮锅 电炖锅</div>
+                            <div class="goodsPrice">￥169</div>
+                        </a>
+                        <a href="javascript:;"><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">找相似</button></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="http://image2.suning.cn/uimg/b2c/newcatentries/0000000000-000000000854714273_1_400x400.jpg"
+                                alt="">
+                            <div class="goodsName">利仁（Liven）DHG-Z390电火锅 3.9L容量 3档火力可调 多功能不粘锅 电煮锅 电炖锅</div>
+                            <div class="goodsPrice">￥169</div>
+                        </a>
+                        <a href="javascript:;"><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">找相似</button></a>
+                    </li>
+
+                </ul>
+            </div> -->
+        </div>
+    </div>
     <!-- 公共模板：底部导航 -->
     <footer class="pyg-footer">
         <a href="javascript:;">
@@ -38,9 +94,55 @@
         </a>
     </footer>
 </body>
+<!-- 轮播图模板 -->
+<script type="text/html" id="loopTemp">
+    <div class="mui-slider">
+               <!-- 图片 -->
+               <div class="mui-slider-group mui-slider-loop">
+                    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data[data.length-1].image_src}}" /></a></div>
+                    {{each data  value index}}
+                    <div class="mui-slider-item"><a href="#"><img src="{{value.image_src}}" /></a></div>
+                    {{/each}}
+                    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data[0].image_src}}" /></a></div>
+               </div>
+               <!-- 索引器 -->
+               <div class="mui-slider-indicator">
+                         {{each data  value index}}
+                         {{if index==0}}
+                    <div class="mui-indicator mui-active"></div>
+                    {{/if}}
+                    {{if index!=0}}
+                    <div class="mui-indicator"></div>
+                    {{/if}}
+                    {{/each}}
+               </div>
+          </div>
+</script>
+<!-- 商品列表模板 -->
+<script type="text/template" id="proTemp">
+    {{each data value1 index1}}
+    <div class="pyg-goodslist">
+            <div class="goodsTitle"><img src="{{value1.group_img}}" alt=""></div>
+            <ul>
+                {{each value1.goods value2 index2}}
+                <li>
+                    <a href="javascript:;">
+                        <img src="{{value2.goods_small_logo}}"
+                            alt="">
+                        <div class="goodsName">{{value2.goods_name}}</div>
+                        <div class="goodsPrice">￥{{value2.goods_price}}</div>
+                    </a>
+                    <a href="javascript:;"><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">找相似</button></a>
+                </li>
+                {{/each}}
+            </ul>     
+    </div>
+    {{/each}}
+</script>
 <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"></script>
 <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
 <script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll.min.js"></script>
 <script src="/lib/arttemplate/template-web.js"></script>
 <script src="/js/index.js"></script>
+
 </html>
