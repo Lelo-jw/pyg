@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/category.css">
+    <title>品优购分类页</title>
+</head>
+
+<body>
+    <!-- 公共模板：顶部搜索 -->
+    <header class="pyg-header">
+        <div class="mui-input-row mui-search">
+            <input type="search" class="mui-input-clear" placeholder="">
+        </div>
+    </header>
+    <!-- 分类页内容块 -->
+    <div class="pyg-main">
+       <div class="left-nav">
+           
+       </div>
+       <div class="right-list"></div>
+    </div>
+    <!-- 公共模板：底部导航 -->
+    <footer class="pyg-footer">
+        <a href="index.html">
+            <span class="fa fa-home"></span>
+            <div>首页</div>
+        </a>
+        <a href="pages/category.html">
+            <span class="fa fa-list-ul "></span>
+            <div>分类</div>
+        </a>
+        <a href="javascript:;">
+            <span class="fa fa-shopping-cart "></span>
+            <div>购物车</div>
+        </a>
+        <a href="javascript:;">
+            <span class="fa fa-user-circle"></span>
+            <div>我的</div>
+        </a>
+    </footer>
+</body>
+<!-- 商品分类列表左侧导航模板 -->
+<script type="text/template" id="categoryTemp">
+    <ul>
+        {{each data value index}}
+        {{if(index === 0)}}
+            <li class="active">{{value.cat_name}}</li>
+        {{else}}
+            <li>{{value.cat_name}}</li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</script>
+<!-- 商品分类列表右侧导航模板 -->
+<script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"></script>
+<script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+<script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll.min.js"></script>
+<script src="/lib/arttemplate/template-web.js"></script>
+<script src="/js/category.js"></script>
+
+</html>

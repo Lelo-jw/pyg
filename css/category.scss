@@ -1,0 +1,25 @@
+ // 分类页内容块
+ .pyg-main{
+     width: 100%;
+     background-color: #fff;
+     display: flex;
+     .left-nav{
+         width: 10rem;
+         height: 100%;
+         overflow: scroll;
+         background-color: #eee;
+         >ul{
+             >li{
+                 text-align: center;
+                 line-height: 4rem;
+             }
+             .active{
+                 border-left: 0.4rem solid #0094ff;
+                 background-color: #fff;
+             }
+         }
+     }
+     .right-list{
+         flex: 1;
+     }
+ }

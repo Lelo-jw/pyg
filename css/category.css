@@ -1,0 +1,31 @@
+.pyg-main {
+  width: 100%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pyg-main .left-nav {
+  width: 10rem;
+  height: 100%;
+  overflow: scroll;
+  background-color: #eee;
+}
+
+.pyg-main .left-nav > ul > li {
+  text-align: center;
+  line-height: 4rem;
+}
+
+.pyg-main .left-nav > ul .active {
+  border-left: 0.4rem solid #0094ff;
+  background-color: #fff;
+}
+
+.pyg-main .right-list {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+/*# sourceMappingURL=category.css.map */
