@@ -1,12 +1,19 @@
 $(()=>{
 
     // ajax拦截器
+    // 发送之前
     $.ajaxSettings.beforeSend = (xhr,ajaxObj) =>{
         // xhr原生ajax
         // jq中的ajax
-        console.log(ajaxObj.url);
+        // console.log(ajaxObj.url);
         ajaxObj.url = "http://api.pyg.ak48.xyz/api/public/v1/" + ajaxObj.url;
-        console.log(ajaxObj.url);
+        // console.log(ajaxObj.url);
+        // 正在等待....
+        $("body").addClass("loadding");
+    }
+    // 发送之后
+    $.ajaxSettings.complete = function(){
+        $("body").removeClass("loadding");
     }
 
     setFont();

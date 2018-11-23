@@ -60,4 +60,34 @@ body {
 .pyg-footer > a > div {
   font-size: 0.12rem;
 }
+
+.loadding::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  content: "";
+  opacity: .8;
+}
+
+.loadding::after {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+  content: "\f110";
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-left: -43px;
+  z-index: 1001;
+  font-size: 100px;
+  color: red;
+}
 /*# sourceMappingURL=common.css.map */

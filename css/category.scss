@@ -1,22 +1,23 @@
  // 分类页内容块
  .pyg-main{
-     padding-left: 1rem;
-     width: 100%;
+     padding-left: 0.8rem;
      background-color: #fff;
      position: relative;
-     display: flex;
      .left-nav{
          position: absolute;
          top: 0;
          left: 0;
-         width: 1rem;
+         width: 0.8rem;
          height: 100%;
          overflow: hidden;
          background-color: #eee;
          >ul{
              >li{
+                 display: flex;
                  text-align: center;
-                 line-height: 0.4rem;
+                 height: 0.4rem;
+                 align-items: center;
+                 justify-content: center;
              }
              .active{
                  border-left: 0.04rem solid #0094ff;
@@ -29,10 +30,11 @@
          overflow: hidden;
 
          .goodstitle{
-             line-height: 0.44rem;
+             height: 0.4rem;
              color: #0094ff;
              font-size: 0.14rem;
              padding-left: 0.1rem;
+             line-height: 0.4rem;
          }
          .goodslist{
              >ul{

@@ -76,3 +76,36 @@ body{
           }
      }
 }
+
+.loadding {
+     //  实现遮罩层
+     &::before {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          z-index: 1000;
+          content: "";
+          opacity: .8;
+     }
+     // 样式的图标
+     &::after {
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          animation: fa-spin 2s infinite linear;
+          content: "\f110";
+          position: fixed;
+          top: 30%;
+          left: 50%;
+          // transform: translateX(-50%);
+          margin-left: -43px;
+          z-index: 1001;
+          font-size: 100px;
+          color: red;
+     }
+}

@@ -1,26 +1,31 @@
 .pyg-main {
-  padding-left: 1rem;
-  width: 100%;
+  padding-left: 0.8rem;
   background-color: #fff;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .pyg-main .left-nav {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1rem;
+  width: 0.8rem;
   height: 100%;
   overflow: hidden;
   background-color: #eee;
 }
 
 .pyg-main .left-nav > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-align: center;
-  line-height: 0.4rem;
+  height: 0.4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .pyg-main .left-nav > ul .active {
@@ -34,10 +39,11 @@
 }
 
 .pyg-main .right-list .goodstitle {
-  line-height: 0.44rem;
+  height: 0.4rem;
   color: #0094ff;
   font-size: 0.14rem;
   padding-left: 0.1rem;
+  line-height: 0.4rem;
 }
 
 .pyg-main .right-list .goodslist > ul {

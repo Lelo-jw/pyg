@@ -99,12 +99,12 @@ $(() => {
             // 转换数据
             let localCates = JSON.parse(localdata);
             // 判断是否过期
-            if(Date.now()-localCates.time > 36000){
+            if(Date.now()-localCates.time > 360000){
                 // 过期了
                 getCategories();
             }else{
                 // 没过期
-                cateData = localCates.data;
+                // cateData = localCates.data;
                 // 渲染页面
                 renderLeft();
                 getCategories(0);
