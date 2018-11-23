@@ -4,7 +4,7 @@
     display: flex;
     >a{
         width: 100%;
-        padding: 1rem;
+        padding: 0.1rem;
         flex: 1;
         >img{
             display: block;
@@ -16,7 +16,7 @@
 
 // 商品列表样式
 .pro-list{
-    padding: 0.5rem;
+    padding: 0.05rem;
     .pyg-goodslist{
         .goodsTitle{
             >img{
@@ -26,14 +26,14 @@
             
         }
         >ul{
-            margin: 0.5rem 0;
+            margin: 0.05rem 0;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             >li{
                 width: 49%;
                 background-color: #fff;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.05rem;
                 a:nth-of-type(1){
                     >img{
                         display: block;
@@ -41,8 +41,8 @@
                         margin: 0 auto;
                     }
                     .goodsName{
-                        padding: 0 0.5rem;
-                        font-size: 1.2rem;
+                        padding: 0 0.05rem;
+                        font-size: 0.12rem;
                         color: #333;
                         overflow:hidden; 
                         text-overflow:ellipsis;
@@ -52,7 +52,7 @@
                     }
                     .goodsPrice{
                         color: red;
-                        font-size: 1.5rem;
+                        font-size: 0.15rem;
                     }
                 }
                 a:nth-of-type(2){
@@ -63,7 +63,7 @@
                         display: block;
                         width: 60%;
                         margin: 0 auto;
-                        margin-bottom: 0.5rem;
+                        margin-bottom: 0.05rem;
                     }
                 }
             }

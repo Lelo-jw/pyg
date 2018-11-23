@@ -7,7 +7,7 @@
 
 .pyg-cates > a {
   width: 100%;
-  padding: 1rem;
+  padding: 0.1rem;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -20,7 +20,7 @@
 }
 
 .pro-list {
-  padding: 0.5rem;
+  padding: 0.05rem;
 }
 
 .pro-list .pyg-goodslist .goodsTitle > img {
@@ -29,7 +29,7 @@
 }
 
 .pro-list .pyg-goodslist > ul {
-  margin: 0.5rem 0;
+  margin: 0.05rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,7 +43,7 @@
 .pro-list .pyg-goodslist > ul > li {
   width: 49%;
   background-color: #fff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.05rem;
 }
 
 .pro-list .pyg-goodslist > ul > li a:nth-of-type(1) > img {
@@ -53,8 +53,8 @@
 }
 
 .pro-list .pyg-goodslist > ul > li a:nth-of-type(1) .goodsName {
-  padding: 0 0.5rem;
-  font-size: 1.2rem;
+  padding: 0 0.05rem;
+  font-size: 0.12rem;
   color: #333;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -65,7 +65,7 @@
 
 .pro-list .pyg-goodslist > ul > li a:nth-of-type(1) .goodsPrice {
   color: red;
-  font-size: 1.5rem;
+  font-size: 0.15rem;
 }
 
 .pro-list .pyg-goodslist > ul > li a:nth-of-type(2) {
@@ -77,6 +77,6 @@
   display: block;
   width: 60%;
   margin: 0 auto;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.05rem;
 }
 /*# sourceMappingURL=index.css.map */
