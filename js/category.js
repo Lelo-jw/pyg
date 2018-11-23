@@ -15,6 +15,9 @@ $(()=>{
                 let html = template('leftTemp',{data:res.data});
                 $('.left-nav').html(html);
                 console.log(res.data[0].children);
+
+                // 初始化iscroll插件（左侧导航条）
+                var leftScroll = new IScroll('.left-nav'); 
                 
                 // 右侧导航
                 getRightList();
@@ -29,6 +32,8 @@ $(()=>{
                         getRightList();
                     })
                 }
+                
+
                 
                 
                 // console.log(Rhtml);
@@ -48,6 +53,19 @@ $(()=>{
                         // lis.eq(i).html(Rhtml);
                         $('.right-list').html(Rhtml);
                         // console.log(lis.eq(i).parent().parent().parent());
+
+                        // 获取右侧加载图片的长度
+                        let imgLength = $('.right-list img').length;
+                        $('.right-list img').on('load',function(){
+                            imgLength--;
+                            // 当最后一张图片加载完毕后，初始化iscroll插件（右侧商品列表）
+                            if(imgLength === 1){
+                                // console.log(imgLength);
+                                var rightScroll = new IScroll('.right-list'); 
+                            }
+                            
+                        })
+                        
                     }
                 }
     }

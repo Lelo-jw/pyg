@@ -14,7 +14,7 @@
   left: 0;
   width: 10rem;
   height: 100%;
-  overflow: scroll;
+  overflow: hidden;
   background-color: #eee;
 }
 
@@ -30,7 +30,7 @@
 
 .pyg-main .right-list {
   height: 100%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .pyg-main .right-list .goodstitle {
