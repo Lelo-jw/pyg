@@ -1,49 +1,106 @@
 // 头部导航
-.goods-header{
+.goods-header {
     background-color: #0094ff;
-    >h1{
+
+    >h1 {
         color: #fff;
     }
-    >a{
-        color: #fff; 
+
+    >a {
+        color: #fff;
     }
-    a:nth-of-type(2){
+
+    a:nth-of-type(2) {
         font-size: 0.24rem;
         margin-top: 0.1rem;
     }
 }
-// 商品列表内容块
-.goods-container{
-    >ul{
-        >li{
-            background-color: #fff;
-            display: flex;
-            margin-bottom: 0.05rem;
-            .goodsLeft{
-                flex: 1;
-                >img{
-                    display: block;
-                    width: 70%;
-                    margin: 0 auto;
-                }
-            }
-            .goodsRight{
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                overflow: hidden;
-                padding:0.15rem 0;
 
-                .goodsName{
-                    font-size: 0.14rem;
-                    color: #555;
+// 商品列表内容块
+.goods-container {
+    position: relative;
+    height: 100%;
+    overflow: scroll;
+
+    .goods_list {
+        li {
+            background-color: #fff;
+            margin-bottom: 0.05rem;
+            >a{
+                display: flex;
+                .goodsLeft {
+                    flex: 1;
+    
+                    >img {
+                        display: block;
+                        width: 70%;
+                        margin: 0 auto;
+                    }
                 }
-                .goodsPrice{
-                    font-size: 0.17rem;
-                    color: red;
+    
+                .goodsRight {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    overflow: hidden;
+                    padding: 0.15rem 0;
+    
+                    .goodsName {
+                        font-size: 0.14rem;
+                        color: #555;
+                    }
+    
+                    .goodsPrice {
+                        font-size: 0.17rem;
+                        color: red;
+                    }
                 }
             }
+
+
         }
     }
+   
+
 }
+
+// .goods_list{
+//     list-style: none;
+//     margin: 0;
+//     padding: 5px;
+//     li{
+//       background-color: #fff;
+//       margin-bottom: 5px;
+//       padding: 5px 0;
+//       a{
+//         display: flex;
+//         .item_left{
+//           flex: 1;
+//           img{
+//             width: 60%;
+//             margin: 0 auto;
+//             display: block;
+//           }
+//         }
+//         .item_right{
+//           flex: 1;
+//           overflow: hidden;
+//           display: flex;
+//           flex-direction: column;
+//           justify-content: space-between;
+//           .goods_name{
+//             text-overflow: ellipsis;
+//             overflow: hidden;
+//             white-space: nowrap;
+//             font-size: 13px;
+//             color: #666;
+//           }
+//           .goods_price{
+//             color: red;
+//             font-size: 18px;
+//           }
+//         }
+//       }
+//     }
+//   }

@@ -15,27 +15,36 @@
   margin-top: 0.1rem;
 }
 
-.goods-container > ul > li {
+.goods-container {
+  position: relative;
+  height: 100%;
+  overflow: scroll;
+}
+
+.goods-container .goods_list li {
   background-color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin-bottom: 0.05rem;
 }
 
-.goods-container > ul > li .goodsLeft {
+.goods-container .goods_list li > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.goods-container .goods_list li > a .goodsLeft {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.goods-container > ul > li .goodsLeft > img {
+.goods-container .goods_list li > a .goodsLeft > img {
   display: block;
   width: 70%;
   margin: 0 auto;
 }
 
-.goods-container > ul > li .goodsRight {
+.goods-container .goods_list li > a .goodsRight {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -53,12 +62,12 @@
   padding: 0.15rem 0;
 }
 
-.goods-container > ul > li .goodsRight .goodsName {
+.goods-container .goods_list li > a .goodsRight .goodsName {
   font-size: 0.14rem;
   color: #555;
 }
 
-.goods-container > ul > li .goodsRight .goodsPrice {
+.goods-container .goods_list li > a .goodsRight .goodsPrice {
   font-size: 0.17rem;
   color: red;
 }
