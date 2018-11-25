@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>商品详情</title>
+    <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/goods-detail.css">
+    <title>品优购商品列表</title>
 </head>
+
 <body>
-    xiangqing
+    <!-- 商品列表头部 -->
+    <header class="detail-header mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">商品详情</h1>
+    </header>
+
+    <!-- 商品列表内容块 -->
+    <div class="goods-container">
+        
+    </div>
+
+    <!-- 公共模板：底部导航 -->
+    <footer class="pyg-footer">
+           
+    </footer>
 </body>
+<!-- 商品详情页模板 -->
+<script type="text/template" id="detailTemp">
+    <!-- 轮播图 -->
+    <div class="mui-slider">
+        <div class="mui-slider-group mui-slider-loop">
+          <!--支持循环，需要重复图片节点-->
+          <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pics[pics.length-1].pics_sma_url}}" /></a></div>
+          {{each pics value index}}
+          <div class="mui-slider-item"><a href="#"><img src="{{value.pics_sma_url}}" /></a></div>
+          {{/each}}
+          <!--支持循环，需要重复图片节点-->
+          <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pics[0].pics_sma_url}}" /></a></div>
+        </div>
+        <div class="mui-slider-indicator">
+            {{each pics index value}}
+            {{if index == 0}}
+            <div class="mui-indicator mui-active"></div>
+            {{/if}}
+            {{if index != 0}}
+            <div class="mui-indicator"></div>
+            {{/if}}  
+            {{/each}}
+       </div>
+    </div>
+    <!-- 轮播图 -->
+    <!-- 商品名称和价格 -->
+    <div class="goods-name">{{goods_name}}</div>
+    <div class="goods-price">￥{{goods_price}}</div>
+    <!-- 商品名称和价格 -->
+    <!-- 商品参数 -->
+    <ul class="goods_post_charge">
+            <li>
+                 <span>已选</span>
+                 <span>白色</span>
+            </li>
+            <li>
+                 <span>促销</span>
+                 <span>是</span>
+            </li>
+            <li>
+                 <span>送至</span>
+                 <span>上海市</span>
+            </li>
+            <li>
+                 <span>运费</span>
+                 <span>免运费</span>
+            </li>
+       </ul>
+    <!-- 商品参数 -->
+    <!-- tab栏 -->
+    <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-primary">
+        <a class="mui-control-item mui-active" href="#item1">图文详情</a>
+        <a class="mui-control-item" href="#item2">规格参数</a>
+    </div>
+    <div>
+        <div id="item1" class="mui-control-content mui-active">
+            1
+        </div>
+        <div id="item2" class="mui-control-content">
+            2
+        </div>
+    </div>
+    <!-- tab栏 -->
+</script>
+<script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"></script>
+<script src="/lib/zepto/zepto.js"></script>
+<script src="/lib/iscroll/iscroll.js"></script>
+<script src="/lib/arttemplate/template-web.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/goods-detail.js"></script>
+
 </html>

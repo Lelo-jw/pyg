@@ -1,0 +1,32 @@
+body{
+    background-color: #fff;
+}
+// 商品名称
+.goods-name{
+    padding: 0.05rem;
+    font-size: 0.14rem;
+    color: #666;
+}
+// 商品价格
+.goods-price{
+    color: red;
+    font-size: 0.2rem;
+    padding: 0.05rem;
+}
+// 商品参数
+.goods_post_charge{
+    font-size: 0.13rem;
+        >li{
+            display: flex;
+            line-height: 0.3rem;
+            border-bottom: 1px solid #ddd;
+            span:nth-of-type(1){
+                flex: 1;
+                color: #555;
+                padding-left: 0.05rem;
+            }
+            span:nth-of-type(2){
+                flex:3;
+            }
+        }
+}
