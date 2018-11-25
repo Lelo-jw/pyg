@@ -54,7 +54,7 @@
 
 .pro-list .pyg-goodslist > ul > li a:nth-of-type(1) .goodsName {
   padding: 0 0.05rem;
-  font-size: 0.12rem;
+  font-size: 0.14rem;
   color: #333;
   overflow: hidden;
   text-overflow: ellipsis;
