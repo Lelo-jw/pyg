@@ -49,9 +49,19 @@ $(function () {
             }
         );
     }
+    // 绑定a标签的点击跳转事件
+    // MUI中a标签默认不能跳转
+    const eventlist = () => {
+        $('.goods_list').on('tap','a',function(){
+            let href = this.href;
+            // console.log(href);
+            location.href = href;
+        })
+    }
 
     // 初始化
     const init = () => {
+        eventlist();
         // 上拉加载和下拉刷新
         mui.init({
             pullRefresh: {
