@@ -14,7 +14,7 @@ $(() => {
     // 获取商品详情信息
     $.get("goods/detail", {goods_id:getUrl('goods_id')},
         function (res) {
-            // console.log(res);
+            console.log(res);
             if(res.meta.status === 200){
                 console.log(res.data); 
                 let html = template('detailTemp',res.data);
@@ -29,9 +29,19 @@ $(() => {
         }
     );
 
+    // 绑定a标签的点击跳转事件
+    // MUI中a标签默认不能跳转
+    const eventlist = () => {
+        $('.detail-tab').on('tap','a',function(){
+            let href = this.href;
+            // console.log(href);
+            location.href = href;
+        })
+    }
+
     // 初始化
     const init = () => {
-
+        eventlist();
     }
     init();
 })
