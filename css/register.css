@@ -22,4 +22,18 @@ form {
 .btn-tools .btn-register {
   width: 49%;
 }
+
+.text-code {
+  position: relative;
+}
+
+.text-code .btn-code {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  padding: 0.05rem;
+  margin-top: 0.05rem;
+  margin-right: 0.05rem;
+}
 /*# sourceMappingURL=register.css.map */

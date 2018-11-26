@@ -19,3 +19,16 @@
         width: 49%;
     }
 }
+// 验证码按钮
+.text-code{
+    position: relative;
+    .btn-code{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        padding: 0.05rem;
+        margin-top: 0.05rem;
+        margin-right: 0.05rem;
+    }
+}
