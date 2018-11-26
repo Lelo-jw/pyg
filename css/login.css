@@ -1,0 +1,20 @@
+form {
+  background-color: #fff;
+  margin: 0.05rem;
+}
+
+.btn-tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.1rem 0.05rem;
+}
+
+.btn-tools .btn-login {
+  margin-top: 0.15rem;
+}
+/*# sourceMappingURL=login.css.map */

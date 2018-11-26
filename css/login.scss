@@ -1,0 +1,14 @@
+form {
+    background-color: #fff;
+    margin: 0.05rem;
+}
+
+// 注册和登录按钮
+.btn-tools{
+    display: flex;
+    flex-direction: column;
+    padding: 0.1rem 0.05rem;
+    .btn-login{
+        margin-top: 0.15rem;
+    }
+}

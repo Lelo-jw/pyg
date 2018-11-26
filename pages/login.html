@@ -8,15 +8,15 @@
     <link href="/lib/mui/css/mui.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/register.css">
-    <title>注册</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <title>登录</title>
 </head>
 
 <body>
     <!-- 商品列表头部 -->
     <header class="detail-header mui-bar mui-bar-nav">
         <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-        <h1 class="mui-title">注册</h1>
+        <h1 class="mui-title">登录</h1>
     </header>
     <div class="register_container">
         <!-- 注册表单 -->
@@ -26,35 +26,14 @@
                 <label>手机号</label>
                 <input type="text" name="mobile" value="13413513613" class="mui-input-clear" placeholder="请输入手机号码">
             </div>
-            <div class="mui-input-row text-code">
-                <label>验证码</label>
-                <input type="text" name="code" placeholder="请输入验证码">
-                <button type="button" class="btn-code mui-btn mui-btn-primary">获取验证码</button>
-            </div>
-            <div class="mui-input-row">
-                <label>邮箱</label>
-                <input type="text" name="email" class="mui-input-clear" placeholder="请输入邮箱">
-            </div>
             <div class="mui-input-row">
                 <label>密码</label>
                 <input type="password" name="pwd" class="mui-input-password" placeholder="请输入密码">
             </div>
-            <div class="mui-input-row">
-                    <label>确认密码</label>
-                    <input type="password" name="pwd2" class="mui-input-password" placeholder="确认密码">
-            </div>
-            <div class="mui-input-row mui-radio">
-                    <label>女</label>
-                    <input name="gender" value="女" type="radio"  checked>
-            </div>
-            <div class="mui-input-row mui-radio">
-                    <label>男</label>
-                    <input name="gender" value="男" type="radio">
-            </div>
         </form>
         <div class="btn-tools">
-                <a href="login.html" class="btn-login mui-btn mui-btn-primary mui-btn-outlined">登录</a>
-                <button type="button" class="btn-register mui-btn mui-btn-primary">注册</button>
+                <a href="category.html" class="btn-register mui-btn mui-btn-primary mui-btn-outlined">注册</a>
+                <button type="button" class="btn-login mui-btn mui-btn-primary">登录</button>
         </div>
     </div>
 </body>
@@ -63,6 +42,6 @@
 <script src="/lib/iscroll/iscroll.js"></script>
 <script src="/lib/arttemplate/template-web.js"></script>
 <script src="/js/common.js"></script>
-<script src="/js/register.js"></script>
+<script src="/js/login.js"></script>
 
 </html>
