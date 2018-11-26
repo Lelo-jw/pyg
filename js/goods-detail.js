@@ -1,18 +1,8 @@
 $(() => {
 
-    /**
-     * 获取url上参数的值
-     * @param {String} name 要求查询的参数名
-     */
-    function getUrl(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return decodeURI(r[2]);
-        return null;
-    }
 
     // 获取商品详情信息
-    $.get("goods/detail", {goods_id:getUrl('goods_id')},
+    $.get("goods/detail", {goods_id:$.getUrl('goods_id')},
         function (res) {
             console.log(res);
             if(res.meta.status === 200){

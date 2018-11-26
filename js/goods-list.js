@@ -8,22 +8,12 @@ $(function () {
      * 
      */
 
-    /**
-     * 获取url上参数的值
-     * @param {String} name 要求查询的参数名
-     */
-    function getUrl(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return decodeURI(r[2]);
-        return null;
-    }
 
 
     // 将发送请求所需要的参数存入对象中，方便修改
     const GoodsAjaxData = {
         query: '',
-        cid: getUrl('cid'),
+        cid: $.getUrl('cid'),
         pagenum: 1,
         pagesize: 10
     }

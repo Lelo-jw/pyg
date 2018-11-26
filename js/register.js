@@ -1,21 +1,5 @@
 $(()=>{
-    // 验证手机号码
-    function checkPhone(phone) {
-        if (!(/^1[34578]\d{9}$/.test(phone))) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-    // 邮箱验证
-    function checkEmail(myemail) {　　
-        var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
-        if (myReg.test(myemail)) {　　　　
-            return true;　　
-        } else {　　　　
-            return false;
-        }
-    }
+    
     // 用户注册
     const eventList = () => {
         // 点击获取验证码
@@ -24,7 +8,7 @@ $(()=>{
             // 获取输入的手机号
             let phoneNum = $("[name='mobile']").val().trim();
             // console.log(phoneNum);
-            if(!checkPhone(phoneNum)){
+            if(!$.checkPhone(phoneNum)){
                 // 非法
                 mui.toast('手机号不合法');
             }else{
@@ -67,7 +51,7 @@ $(()=>{
 
             // debugger;
             // 验证手机号
-            if(!checkPhone(mobile_txt)){
+            if(!$.checkPhone(mobile_txt)){
                 mui.toast('手机号不合法');
                 return;
             }
@@ -77,7 +61,7 @@ $(()=>{
                 return;
             }
             // 验证邮箱
-            if(!checkEmail(email_txt)){
+            if(!$.checkEmail(email_txt)){
                 mui.toast('请输入正确的邮箱');
                 return;
             }

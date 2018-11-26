@@ -14,6 +14,11 @@ $(()=>{
             }
             // 获取输入的手机号
             let username = $("[name='mobile']").val().trim();
+            if(!$.checkPhone(username)){
+                // 非法
+                mui.toast('手机号不合法');
+                return;
+            }
             // 发送登录请求
             $.post("login", {
                 username: username,
