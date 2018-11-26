@@ -27,8 +27,17 @@ $(()=>{
                 console.log(res);
                 if(res.meta.status == 200){
                     mui.toast(res.meta.msg);
+                    // 成功后将信息存入会话存储中,JSON格式字符串
+                    sessionStorage.setItem('userInfo',JSON.stringify(res.data));
+
+                    let toPage = sessionStorage.getItem('prevPage');
+                    // console.log(toPage);
+                    if(!toPage){
+                        toPage = '../index.html';
+                    }
+                    location.href = toPage;
                     // 默认先跳回首页
-                    location.href = '../index.html';
+                    // location.href = '../index.html';
                 }else{
                     mui.toast(res.meta.msg);
                 }
