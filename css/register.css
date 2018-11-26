@@ -1,0 +1,25 @@
+form {
+  background-color: #fff;
+  margin: 0.05rem;
+}
+
+.btn-tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.05rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #eee;
+  border: 0;
+}
+
+.btn-tools .btn-login {
+  width: 49%;
+}
+
+.btn-tools .btn-register {
+  width: 49%;
+}
+/*# sourceMappingURL=register.css.map */

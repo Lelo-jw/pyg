@@ -1,0 +1,21 @@
+ 
+ form {
+     background-color: #fff;
+     margin: 0.05rem;
+ }
+ // 按钮
+ .btn-tools {
+    display: flex;
+    padding: 0.05rem;
+    justify-content: space-between;
+    background-color: #eee;
+    border: 0;
+
+    .btn-login {
+        width: 49%;
+    }
+
+    .btn-register {
+        width: 49%;
+    }
+}
