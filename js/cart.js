@@ -11,7 +11,7 @@ $(() => {
             let lisObj = JSON.parse(lis[i].dataset.obj);
             // console.log(lisObj);
             // 单个商品的个数
-            let lisAmount = $('.amount_new').val();
+            let lisAmount = lis.eq(i).find('.amount_new').val();
             lisPrice = lisObj.goods_price * lisAmount;
             allPrice += lisPrice;
         }
@@ -47,10 +47,12 @@ $(() => {
                     let html = template('mainTpl',{obj: cart_info});
                     $('.order_wrap').html(html);
 
-                    getAllPrice();
-
                     // 初始化数字输入框
                     mui(".mui-numbox").numbox();
+
+                    getAllPrice();
+
+                    
                 }else{
                     // 失败
                 }        
@@ -59,15 +61,14 @@ $(() => {
     }
 
     // 同步购物车
-    const resetCart = () => {
+    const resetCart = (lis) => {
         // 获取商品数据集合
         let infos = {};
         // 获取需要同步的li标签
-        let lis = $('.order_wrap li');
         for(let i = 0;i<lis.length;i++){
             let lisObj = lis.eq(i).data("obj");
             // 修改数量
-            lisObj.amount = $('.amount_new').val();
+            lisObj.amount = lis.eq(i).find('.amount_new').val();
             infos[lisObj.goods_id] = lisObj; 
         }
         // 发送同步请求
@@ -86,6 +87,8 @@ $(() => {
                 if(res.meta.status === 200){
                     // 成功
                     mui.toast(res.meta.msg);
+                    // 刷新数据
+                    getCartList();
                 }else{
                     // 失败
                     mui.toast(res.meta.msg);
@@ -124,9 +127,38 @@ $(() => {
                 
             }else{
                 $('.edit_btn').text('编辑'); 
-                
+                let lis = $('.order_wrap li');
                 // 同步购物车  
-                resetCart(); 
+                resetCart(lis); 
+            }
+        })
+
+        // 点击删除按钮
+        $('.delete_btn').on('tap',() => {
+            // 获取勾选中的li
+            let ckl = $('.inp_chk:checked').parents('li');
+            // console.log(ckl);
+            // 判断是否有勾选
+            if(ckl.length == 0){
+                // 未勾选
+                mui.toast('请勾选需要删除的商品');
+            }else if(ckl.length > 0){
+                // 弹出警告框，提示用户是否要删除
+                mui.confirm("是否要删除商品","警告",["删除","取消"],(e)=>{
+                    // console.log(e);
+                    if(e.index == 0){
+                        // 删除
+                        // 获取未被选中的li
+                        let unlis = $('.inp_chk').not(":checked").parents('li');
+                        // console.log(unlis);
+                        // 同步购物车
+                        resetCart(unlis);
+                    }else if(e.index == 1){
+                        // 取消
+                        mui.toast('嘻嘻，逃过一命');
+                    }
+                })
+
             }
         })
     }
@@ -134,6 +166,7 @@ $(() => {
 
     // 初始化
     const init = () => {
+        $.isLogin();
         getCartList();
         eventList();
     }

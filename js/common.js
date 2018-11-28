@@ -69,7 +69,31 @@ $(()=>{
             var r = window.location.search.substr(1).match(reg);
             if (r != null) return decodeURI(r[2]);
             return null;
+        },
+        /**
+         * 
+         * 判断是否登录
+         */
+        isLogin: ()=> {
+            // 判断有没有登录？？ 看本地存储中有没有 字段 userInfo  
+            var userinfoStr = sessionStorage.getItem("userInfo");
+            if (!userinfoStr) {
+                // 不存在
+                // 设置来源页面 方便 登录重新跳回来
+                sessionStorage.setItem("pageurl", location.href);
+
+                // 跳转登录页面 不要加延迟
+                location.href = "login.html";
+                // 因为页面的加载顺序 先  css -> html -> js 此时肯定是可以看到标签
+                // 解决1 ： 把权限控制的放入到 head标签中执行 
+                // 解决2 ： 在样式中隐藏 body标签 已经登录成功了  $(body).show();
+
+            } else {
+                // 存在
+                $("body").show();
+            }
         }
+        
     })
 
 

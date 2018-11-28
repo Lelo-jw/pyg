@@ -156,6 +156,10 @@
   -webkit-box-orient: vertical;
 }
 
+body {
+  display: none;
+}
+
 #cart_body .delete_btn,
 #cart_body .goods_chk_wrap,
 #cart_body .goods_num_tool {
