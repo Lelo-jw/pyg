@@ -77,6 +77,9 @@ $(() => {
                             // 成功
                             // mui.toast("成功");
                             mui.toast(res.meta.msg);
+                            mui.confirm("是否要跳转到购物车","提示",["是","否"],() => {
+                                location.href = "/pages/cart.html";
+                            })
                         } else {
                             // 失败
                             mui.toast(res.meta.msg);
