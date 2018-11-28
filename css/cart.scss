@@ -1,0 +1,180 @@
+// 函数 混合
+@mixin line_num($num:1) {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal !important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    // 存在兼容性  谷歌和ios可用 如果其他内核浏览器 慎用
+    // 给 div 加一个高度  overflow:hidden；
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+  }
+  
+  
+  .pyg_view {
+    padding: 0.1rem;
+  }
+  
+  // 公共的标题的名字
+  .item_title {
+    font-size: 0.13rem;
+    color: #666;
+    margin-bottom: 0.1rem;
+  }
+  
+  // 配送地址
+  .address {
+    margin-bottom: 0.15rem;
+  
+    .addr_content {
+      background-color: #fff;
+      display: flex;
+      padding: 0.1rem 0;
+  
+      .addr_icon {
+        flex: 1;
+        font-size: 0.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+      }
+  
+      .addr_right {
+        flex: 5;
+  
+        .addr_name1 {
+          font-size: 0.14rem;
+        }
+  
+        .addr_name2 {
+          font-size: 0.12rem;
+          color: #666;
+        }
+      }
+    }
+  }
+  
+  //总价
+  .price_row {
+    margin-bottom: 0.15rem;
+  
+  
+    .price_content {
+      background-color: #fff;
+      padding: 0.1rem;
+  
+      .price_left {
+        float: left;
+        flex: 1;
+  
+        .total_price_wrap {
+          display: inline-block;
+          color: red;
+  
+        }
+      }
+  
+      .price_right {
+        float: right;
+        font-size: 0.14rem;
+      }
+    }
+  }
+  
+  // 订单
+  .order_row {
+    .order_content {
+      padding: 0.1rem;
+  
+  
+      .order_warp {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+  
+        li {
+          display: flex;
+          background-color: #fff;
+          margin-bottom: 0.05rem;
+          padding: 0.05rem 0;
+  
+          // 复选框
+          .goods_chk_wrap {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+  
+            .inp_chk {
+              position: static;
+            }
+          }
+  
+          // 图片
+          .goods_img_wrap {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+  
+            img {
+              width: 60%;
+              display: block;
+            }
+          }
+  
+          // 商品的信息
+          .goods_info_wrap {
+            flex: 3;
+            overflow: hidden;
+  
+            .goods_name {
+              font-size: 0.14rem;
+              color: #666;
+              // 显示一行并且 。。。
+              // text-overflow: ellipsis;
+              // overflow: hidden;
+              // white-space: nowrap;
+              // 显示二行 第二行最后边 显示...
+              margin-bottom: 0.05rem;
+              @include line_num(2);
+  
+            }
+  
+          }
+        }
+      }
+    }
+  }
+  
+  body {
+    // display: none;
+  }
+  
+  
+  // 默认隐藏的一些标签
+  #cart_body {
+  
+    .delete_btn,
+    .goods_chk_wrap,
+    .goods_num_tool {
+      display: none;
+    }
+  }
+  
+  
+  // body.edit_status 
+  #cart_body.edit_status {
+  
+    .delete_btn,
+   
+    .goods_num_tool {
+      display: block;
+    }
+    .goods_chk_wrap{
+      display: flex;
+    }
+  }
